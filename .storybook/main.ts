@@ -16,7 +16,7 @@ const config: StorybookConfig = {
     options: {},
   },
   docs: {
-    autodocs: 'tag',
+    autodocs: true,
   },
   webpackFinal(config) {
     config.resolve?.modules?.push(`${process.cwd()}/src`)
