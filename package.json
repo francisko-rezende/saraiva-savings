@@ -10,6 +10,7 @@
     "test:ci": "jest --runInBand",
     "start": "next start",
     "lint": "next lint",
+    "generate": "npx plop --plopfile generators/plopfile.js",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -49,6 +50,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-styled-components": "^7.2.0",
     "lint-staged": "^15.1.0",
+    "plop": "^4.0.0",
     "prettier": "3.1.0",
     "storybook": "^7.5.3",
     "typescript": "^5"
