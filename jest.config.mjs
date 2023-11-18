@@ -17,6 +17,10 @@ const config = {
     '!src/app/**', // should be tested in e2e
     '!src/lib/registry.tsx'
   ],
+  moduleNameMapper: {
+    '^styled-components':
+      'styled-components/dist/styled-components.browser.cjs.js'
+  }
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
