@@ -11,6 +11,12 @@ const config = {
   // Add more setup options before each test is run
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testEnvironment: 'jest-environment-jsdom',
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/*.ts(x)?',
+    '!src/app/**', // should be tested in e2e
+    '!src/lib/registry.tsx'
+  ],
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
