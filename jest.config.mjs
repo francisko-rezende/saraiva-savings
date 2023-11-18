@@ -1,0 +1,31 @@
+import nextJest from 'next/jest.js'
+
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: './',
+})
+
+// Add any custom config to be passed to Jest
+/** @type {import('jest').Config} */
+const config = {
+  // Add more setup options before each test is run
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  testEnvironment: 'jest-environment-jsdom',
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/*.ts(x)?',
+    '!src/app/**', // should be tested in e2e
+    '!src/stories/**',
+    '!src/lib/registry.tsx',
+    '!src/types/**',
+    '!src/styles/**',
+    '!src/**/*.stories.tsx',
+  ],
+  moduleNameMapper: {
+    '^styled-components':
+      'styled-components/dist/styled-components.browser.cjs.js'
+  }
+}
+
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+export default createJestConfig(config)
