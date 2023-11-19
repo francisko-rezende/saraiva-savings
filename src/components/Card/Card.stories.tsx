@@ -6,10 +6,6 @@ const meta = {
   component: Card,
   parameters: {
     layout: 'centered',
-    backgrounds: {
-      default: 'dark',
-      values: [{ name: 'dark', value: '#333333' }],
-    },
   },
 } satisfies Meta<typeof Card>
 
