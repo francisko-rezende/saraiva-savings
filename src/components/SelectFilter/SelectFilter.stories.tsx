@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { {{pascalCase name}} } from '.'
+import { SelectFilter } from '.'
 
 const meta = {
-  title: '{{pascalCase name}}',
-  component: {{pascalCase name}},
+  title: 'SelectFilter',
+  component: SelectFilter,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
-} satisfies Meta<typeof {{pascalCase name}}>
+} satisfies Meta<typeof SelectFilter>
 
 export default meta
 
