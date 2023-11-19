@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { {{pascalCase name}} } from '.'
+import { CardAmount } from '.'
 
 const meta = {
-  title: '{{pascalCase name}}',
-  component: {{pascalCase name}},
+  title: 'CardAmount',
+  component: CardAmount,
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -11,10 +11,11 @@ const meta = {
       values: [{ name: 'dark', value: '#333333' }],
     },
   },
-} satisfies Meta<typeof {{pascalCase name}}>
+} satisfies Meta<typeof CardAmount>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {}
+export const Positive: Story = { args: { amount: 100 } }
+export const Negative: Story = { args: { amount: -100 } }
