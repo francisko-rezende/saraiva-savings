@@ -14,12 +14,13 @@ const config = {
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
-    '!src/app/**', // should be tested in e2e
+    '!src/app/**',
     '!src/stories/**',
     '!src/lib/registry.tsx',
     '!src/types/**',
     '!src/styles/**',
     '!src/**/*.stories.tsx',
+    '!src/data/**',
   ],
   moduleNameMapper: {
     '^styled-components':
