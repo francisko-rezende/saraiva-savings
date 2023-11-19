@@ -2,6 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
 
+@font-face {
+  font-family: 'Inter';
+  src:
+    url('/fonts/inter.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: fallback;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -11,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body {
+  font-family: 'Inter', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
