@@ -5,7 +5,11 @@ const meta = {
   title: '{{pascalCase name}}',
   component: {{pascalCase name}},
   parameters: {
-  layout: 'fullscreen',
+    layout: 'centered',
+    backgrounds: {
+      default: 'dark',
+      values: [{ name: 'dark', value: '#333333' }],
+    },
   },
 } satisfies Meta<typeof {{pascalCase name}}>
 
@@ -13,4 +17,4 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {}
+export const Default: Story = {}
