@@ -42,10 +42,10 @@ const eveningEntry = generateEntry(
 newEntries.push(morningEntry, eveningEntry)
 
 // Previous days entries (two entries for each of the two previous days)
-for (let i = 1; i <= 2; i++) {
+for (let i = 1; i <= 3; i++) {
   const previousDate = new Date(currentDate.getTime() - i * oneDay)
   const morningEntry = generateEntry(
-    '-4050',
+    '4050',
     'deposit',
     `New Company C${i}`,
     'Manufacturing',
@@ -64,7 +64,7 @@ for (let i = 1; i <= 2; i++) {
 }
 
 // Upcoming days entries (two entries for each of the two upcoming days)
-for (let i = 1; i <= 2; i++) {
+for (let i = 1; i <= 3; i++) {
   const upcomingDate = new Date(currentDate.getTime() + i * oneDay)
   const morningEntry = generateEntry(
     '2500',
