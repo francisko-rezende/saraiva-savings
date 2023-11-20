@@ -1,0 +1,1 @@
+export { StackedBarPlot } from './StackedBarPlot'
