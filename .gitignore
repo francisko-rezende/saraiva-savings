@@ -38,3 +38,5 @@ next-env.d.ts
 src/stories
 
 storybook-static
+
+requirements.md

@@ -1,3 +1,10 @@
-export default function Home() {
-  return <h1>Saraiva Savings</h1>
+// import { DataProvider } from '@/components/DataContext/DataContext'
+import { DatePicker } from '@/components/DatePicker'
+
+export default async function Home() {
+  return (
+    // <DataProvider initialData={data}>
+    <DatePicker />
+    // </DataProvider>
+  )
 }
