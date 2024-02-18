@@ -3,8 +3,7 @@
 import { mockData } from '@/data/mockData'
 import Select, { Options } from 'react-select'
 import { useState } from 'react'
-
-type Option = { label: string; value: string }
+import { Option } from '@/types/Option'
 
 export const SelectFilter = () => {
   const industrySet = new Set(mockData.map(({ industry }) => industry))
