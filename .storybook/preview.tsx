@@ -1,3 +1,5 @@
+import * as React from 'react'
+import { FiltersProvider } from './../src/components/FiltersContext/FiltersContext'
 import { theme } from './../src/styles/theme'
 import { withThemeFromJSXProvider } from '@storybook/addon-themes'
 import { GlobalStyles } from '../src/styles/global'
@@ -12,4 +14,9 @@ export const decorators = [
     defaultTheme: 'default',
     GlobalStyles,
   }),
+  (Story) => (
+    <FiltersProvider>
+      <Story />
+    </FiltersProvider>
+  ),
 ]
