@@ -1,6 +1,6 @@
 'use client'
 
-import { DayPicker } from 'react-day-picker'
+import { DateRange, DayPicker } from 'react-day-picker'
 import * as S from './DatePicker.styles'
 import { ComponentProps, ReactNode, useState } from 'react'
 import 'react-day-picker/dist/style.css'
@@ -8,17 +8,13 @@ import { Root, Trigger, Anchor, Portal, Content } from '@radix-ui/react-popover'
 import { styled } from 'styled-components'
 import { Calendar } from 'lucide-react'
 import { formatToUSDate } from '@/utils/formatToUSDate'
-import { useFilters } from '@/components/FiltersContext/FiltersContext'
-import { useSetDateQuery } from '@/hooks/useSetDateQuery'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-// import { useData } from '../DataContext/DataContext'
 
 type DatePicker = {
   children: ReactNode
 }
 
 const PopoverContent = styled(Content)`
-  /* background-color: red; */
   border-radius: ${({ theme }) => theme.borderRadius.md};
   padding: ${({ theme }) => theme.spacings[2]};
   box-shadow: ${({ theme }) => theme.shadows.medium};
@@ -60,10 +56,9 @@ export const Popover = ({ children, labelText, ...props }: Popover) => (
 
 export const DatePicker = () => {
   const today = new Date()
-  const { selectedDateRangeState } = useFilters()
+
   const [isOpen, setIsOpen] = useState(false)
-  const [range, setRange] = selectedDateRangeState
-  useSetDateQuery()
+  const [range, setRange] = useState<DateRange | undefined>()
   const { replace } = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -81,6 +76,8 @@ export const DatePicker = () => {
     }
   }
 
+  const handleClose = () => setIsOpen(false)
+
   return (
     <Popover
       open={isOpen}
@@ -97,7 +94,7 @@ export const DatePicker = () => {
           onSelect={setRange}
         />
         <button onClick={handleSetDateRange}>Select range</button>
-        <button onClick={() => setIsOpen(false)}>Close</button>
+        <button onClick={handleClose}>Close</button>
       </S.Wrapper>
     </Popover>
   )
